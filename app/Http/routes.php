@@ -11,5 +11,22 @@
 |
 */
 
+/*
+ * Роут отрабатывающий при загрузке приложения
+ */
 Route::get('/', 'DefaultController@index');
+/*
+ * Отправляем все события с базы данных в календарь в формате JSON
+ */
+Route::get('/events', 'DefaultController@getJson');
+/*
+ * Тестируем AJAX
+ */
+Route::get('/test', 'DefaultController@test');
 
+
+
+
+Route::post('/ajax', 'DefaultController@sendAjaxDate');
+
+Route::post('/addPersonWithAjax', 'DefaultController@addPerson');

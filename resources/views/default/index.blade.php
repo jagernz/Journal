@@ -1,17 +1,32 @@
 @extends('layouts.index')
 
 @section('content')
-    <section>
 
-        <br>
-        <p>This is Default content!</p>
-        <br>
+<br>
+<div class="row">
+    <div class="col-lg-2 col-lg-offset-1" id="leftpart">
 
-        @foreach($tasks as $task)
-            <div>
-                {{ $task->description }}
-            </div>
-        @endforeach
+        <div class="dayClick">
+            <h2></h2>
+        </div>
 
-    </section>
+        <div class="information">
+
+            <form class="form-inline">
+                <div class="form-group">
+                    <label for="name"></label>
+                    <input type="text" class="form-control" id="name" placeholder="Имя персоны">
+                </div>
+                <br>
+                <button type="button" class="btn btn-primary" id="addPerson">Добавить персону</button>
+            </form>
+
+        </div>
+    </div>
+    <div class="col-lg-9">
+        <div id='calendar' class="container"></div>
+    </div>
+    </div>
+
+
 @endsection
